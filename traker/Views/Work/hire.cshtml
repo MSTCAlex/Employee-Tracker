@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "hire";
+}
+
+<h2>hire</h2>
+
+@foreach (var employer in ViewBag.employers)
+{
+     <h4>@employer.UserName</h4>
+     @Html.ActionLink("hire","Create",new { employer = employer.Id })
+}
+
+
+

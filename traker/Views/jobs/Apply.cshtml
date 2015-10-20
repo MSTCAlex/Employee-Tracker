@@ -1,0 +1,57 @@
+﻿@model traker.Models.job
+
+@{
+    ViewBag.Title = "Apply";
+}
+
+<h2>Apply</h2>
+
+<div>
+    <h4>job</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.employeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalHours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Apply","Apply")
+</p>
