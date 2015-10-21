@@ -1,0 +1,58 @@
+﻿@model IEnumerable<traker.Models.job>
+
+@{
+    ViewBag.Title = "MyJobs";
+}
+
+<h2>MyJobs</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.employeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.employerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalHoursWorked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricePerHour)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.employeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalHoursWorked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PricePerHour)
+        </td>
+        <td>
+            @Html.ActionLink("Work", "Details", new { id=item.Id }) |
+        </td>
+    </tr>
+}
+
+</table>

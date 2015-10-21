@@ -20,6 +20,31 @@ namespace traker.Controllers
             return View(db.job.ToList());
         }
 
+        public ActionResult MyJobs()
+        {
+            var all_jobs = db.job.ToList();
+            List<job> thisUserJobs = new List<job>();
+            foreach (var job in all_jobs)
+            {
+                var name = System.Web.HttpContext.Current.User.Identity.Name;
+                RolesManager role = new RolesManager();
+                var userId = role.getUserId(name);
+                if (job.employerId == userId)
+                {
+                    thisUserJobs.Add(job);
+                }
+            }
+
+            return View(thisUserJobs);
+        }
+
+
+        public ActionResult getToWork()
+        {
+            return View();
+        }
+
+
         // GET: Work/Details/5
         public ActionResult Details(int? id)
         {
@@ -37,8 +62,13 @@ namespace traker.Controllers
 
         // GET: Work/Create
         [Authorize(Roles ="employee")]
-        public ActionResult Create()
+        public ActionResult Create(string employer)
         {
+            if (employer != null)
+            {
+                RolesManager role = new RolesManager();
+                
+            }
             return View();
         }
 

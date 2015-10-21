@@ -258,6 +258,8 @@
     <Content Include="Views\Work\Edit.cshtml" />
     <Content Include="Views\Work\Index.cshtml" />
     <Content Include="Views\Work\hire.cshtml" />
+    <Content Include="Views\Work\MyJobs.cshtml" />
+    <Content Include="Views\Work\getToWork.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
